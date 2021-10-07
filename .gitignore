@@ -1,8 +1,11 @@
-### (Raw) Data to exclude
+### Exclude (raw) data
 data/**
 results/**
 
-### R auxiliary files to exclude
+### Exclude informal notes
+notes/**
+
+### Exclude R auxiliary files
 # History files
 .Rhistory
 .Rapp.history
