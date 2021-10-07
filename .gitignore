@@ -1,10 +1,15 @@
+### (Raw) Data to exclude
+data/**
+results/**
+
+### R auxiliary files to exclude
 # History files
 .Rhistory
 .Rapp.history
 
 # Session Data files
-.RData
 
+.RData
 # User-specific files
 .Ruserdata
 
