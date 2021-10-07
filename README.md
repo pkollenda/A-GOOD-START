@@ -10,13 +10,17 @@ Empty project shell with all the right workflow options.
 
 ## Reproducibility
 
-You need GIT installed and talking to RSstudio. See
+You need GIT installed and talking to RStudio. See
 [here](https://happygitwithr.com/) for help.  
 You need a working version of Latex + Editor (I use
 [TexStudio](https://www.texstudio.org/)) or figure out how to do it in
 RMarkdown ([like so](https://github.com/grantmcdermott/lecturenotes)).
 
 ## Workflow Tips
+
+### R
+
+Keep options etc. in the RProfile file.
 
 ### GIT
 
