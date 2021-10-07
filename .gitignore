@@ -45,3 +45,6 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+### Exclude MacOS auxiliary files
+.DS_Store
