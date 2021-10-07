@@ -1,0 +1,81 @@
+
+%% (1) Set up document
+\documentclass[
+	11pt,
+	%twocolumn,
+	%draftmode = draft,
+	%twoside=true
+]{article}
+
+%% Packages
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel} % english language support
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{tabularx, booktabs, longtable, dcolumn, rotating}
+\usepackage{graphicx, subcaption}
+\usepackage[backref=page, colorlinks, citecolor=blue]{hyperref} % Backref to add page numbers behind references that link back to where the reference was found. Renewcommand below adds a "[Cited on page X]" to reference list.
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{%
+	\ifcase #1 (Not cited.)%
+	\or        [Cited on page~#2.]%
+	\else      [Cited on pages~#2.]%
+	\fi}
+\usepackage[right=30mm,left=30mm,top=15mm,bottom=20mm, includeheadfoot]{geometry}
+\usepackage{pdflscape}
+\usepackage{tcolorbox}
+\usepackage[round]{natbib}
+\RequirePackage[colorinlistoftodos, textsize=footnotesize, disable]{todonotes} % Todo Comments; use option 'disable' to disable comments
+
+\setlength{\tabcolsep}{-2pt} 
+
+%\usepackage[tablesonly]{endfloat}
+% Let longtable have a clearpage before to flush quede tables and assure longtable works with endfloat.
+\let\normallongtable=\longtable
+\renewcommand{\longtable}{\clearpage\normallongtable}
+%\DeclareDelayedFloatFlavour*{longtable}{table}
+%\DeclareDelayedFloatFlavour*{landscape}{table}
+% Change to \linespread{1.66} for double spacing.
+\linespread{1.15} 
+
+\usepackage{arydshln}
+\makeatletter
+\def\adl@drawiv#1#2#3{%
+	\hskip.5\tabcolsep
+	\xleaders#3{#2.5\@tempdimb #1{1}#2.5\@tempdimb}%
+	#2\z@ plus1fil minus1fil\relax
+	\hskip.5\tabcolsep}
+\newcommand{\cdashlinelr}[1]{%
+	\noalign{\vskip\aboverulesep
+		\global\let\@dashdrawstore\adl@draw
+		\global\let\adl@draw\adl@drawiv}
+	\cdashline{#1}
+	\noalign{\global\let\adl@draw\@dashdrawstore
+		\vskip\belowrulesep}}
+\makeatother
+
+%% Restart counter with Roman Numbering in Appendix
+\let\origappendix\appendix % save the existing appendix command
+\renewcommand\appendix{\clearpage\pagenumbering{Roman}\origappendix}
+
+\begin{document} 
+% Todolist
+%\listoftodos 
+
+% Cover & Titlepage
+\input{./Content/Titlepage}
+
+% Content Sections
+\input{./Content/Introduction}
+
+%% Bibliography (natbib, Ecta style-file)
+\clearpage
+\bibliographystyle{./References/aea}
+\bibliography{./References/library.bib}
+
+% Appendix
+\begin{appendix}	
+\include{./Content/Appendix/DataAppendix}
+\end{appendix}
+
+\end{document}
