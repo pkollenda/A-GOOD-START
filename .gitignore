@@ -48,3 +48,13 @@ vignettes/*.pdf
 
 ### Exclude MacOS auxiliary files
 .DS_Store
+
+### Exclude auxiliary Tex files
+*.bbl
+*.blg
+*.brf
+*.log
+*.out
+*.spl
+*.synctex.gz
+*.aux
