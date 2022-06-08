@@ -54,7 +54,7 @@ file.
 
 -   GranttMcDermott uses [GNU Make](https://www.gnu.org/software/make/)
     to automatically run all (or parts of) the executables in the
-    project. Looks cool but I will stick with the one master.R file for
+    project. Looks cool but I will stick with the one main.R file for
     now which executes all the code.
 
 ## Acknowledgments
